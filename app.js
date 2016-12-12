@@ -15,8 +15,6 @@ qiniu.conf.SECRET_KEY = config.SECRET_KEY;
  */
 const uptoken = function(bucket, key) {
     let putPolicy = new qiniu.rs.PutPolicy(bucket + ":" + key);
-    // putPolicy.callbackUrl = 'http://7xv9xo.com1.z0.glb.clouddn.com/callback';
-    // putPolicy.callbackBody = 'filename=$(fname)&filesize=$(fsize)';
     return putPolicy.token();
 };
 
@@ -44,21 +42,7 @@ const uploadFile = function(uptoken, key, localFile) {
     };
 };
 
-// const client = new qiniu.rs.Client();
-// const getFile = function(bucket, key) {
-//     return callback => {
-//         client.stat(bucket, key, function(err, ret) {
-//             if (!err) {
-//                 console.log('getFile success:', ret);
-//                 callback(null, ret);
-//             } else {
-//                 console.log('getFile error', err);
-//                 callback(err, null);
-//             }
-//         });
-//     }
-// }
-var run = function () {
+let run = function () {
     co(function*() {
         let img = yield prompt.img();
         let token = uptoken(config.bucket, img.name);
