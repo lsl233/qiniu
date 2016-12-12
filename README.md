@@ -3,7 +3,7 @@
 <!-- more -->
 ### Installation
 ```
-git clone 'xxx'
+git clone 'https://github.com/lsl233/qiniu.git'
 cd qiniu
 npm install
 node app
