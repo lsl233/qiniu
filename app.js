@@ -47,12 +47,11 @@ let run = function () {
         let img = yield prompt.img();
         let token = uptoken(config.bucket, img.name);
         let results = yield uploadFile(token, img.name, img.path);
-        let imgSrc = `${config.imgHostName + results.key}`;
+        let imgSrc = `${config.imgHostName + results.key}?imageslim`;
         console.log(imgSrc);
         run();
     }).catch(function (error) {
-        console.log('errrrrrr', error);
-        // run();
+        console.log('run error', error);
     });
 }
 run();
