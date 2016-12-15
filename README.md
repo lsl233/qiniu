@@ -1,12 +1,12 @@
 ## Intro
-个人使用，基于node图片上传工具，将图片上传到七牛仓库，获取在线图片地址。
+基于node图片上传工具，将图片上传到七牛仓库，获取在线图片地址。 主要是为了在写mackdown时，插入图片，代码很简陋
 <!-- more -->
 ## Installation
 ```
 git clone 'https://github.com/lsl233/qiniu.git'
 cd qiniu
 npm install
-node app
+npm run start
 ```
 
 ## Usage
